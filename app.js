@@ -34,10 +34,11 @@ app.post('/add', (req, res) => {
     var name = req.body.name;
     var email = req.body.email;
     var phone_number = req.body.phone_number;
+    var position = req.body.position;
 
-    const query = `INSERT INTO contact_info (name, email, phone_number) VALUES ($1, $2, $3)`;
+    const query = `INSERT INTO contact_info (name, email, phone_number, position) VALUES ($1, $2, $3, $4)`;
 
-    db.query(query, [name, email, phone_number], (err, result) => {
+    db.query(query, [name, email, phone_number, position], (err, result) => {
         if (err) {
             console.log(err);
         } else {
@@ -51,10 +52,11 @@ app.post('/edit' , (req, res) => {
     var name = req.body.name;
     var email = req.body.email;
     var phone_number = req.body.phone_number;
+    var position = req.body.position;
 
-    const query = `UPDATE contact_info SET email = $1, phone_number = $2 WHERE name = $3`;
+    const query = `UPDATE contact_info SET email = $1, phone_number = $2, position = $3 WHERE name = $4`;
 
-    db.query(query, [email, phone_number, name], (err, result) => {
+    db.query(query, [email, phone_number, position, name], (err, result) => {
         if (err) {
             console.log(err);
         } else {

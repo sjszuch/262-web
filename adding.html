@@ -18,6 +18,7 @@
 
     <!-- Page Content -->
     <div class="container">
+      
       <!-- Form that will be used to add data using the API -->
       <h1>Add Data</h1>
       <br />
@@ -31,6 +32,13 @@
 
         <label for="phone_number">Phone Number:</label>
         <input type="tel" id="phone_number" name="phone_number" required />
+
+        <label for="position">Position:</label>
+        <select id="position" name="position">
+          <option value="Employee">Employee</option>
+          <option value="Manager">Manager</option>
+          <option value="Customer">Customer</option>
+        </select>
 
         <button type="submit">Add</button>
       </form>
